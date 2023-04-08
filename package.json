@@ -1,6 +1,6 @@
 {
   "name": "@gibme/web3",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Web3 helper library",
   "main": "./dist/web3.js",
   "types": "./dist/web3.d.ts",
@@ -43,7 +43,7 @@
     }
   },
   "devDependencies": {
-    "@gibme/auto-pack": "^0.0.2",
+    "@gibme/auto-pack": "^0.0.6",
     "@types/mocha": "^10.0.0",
     "@types/node": "^18.11.9",
     "@typescript-eslint/eslint-plugin": "^5.42.0",
@@ -64,8 +64,8 @@
     "@babel/core": "^7.20.5",
     "@babel/preset-env": "^7.20.2",
     "@coinbase/wallet-sdk": "^3.6.0",
-    "@gibme/local-storage": "^1.0.3",
-    "@gibme/timer": "^1.0.1",
+    "@gibme/local-storage": "^1.0.4",
+    "@gibme/timer": "^1.0.3",
     "@types/bootstrap": "^5.2.6",
     "@types/jquery": "^3.5.16",
     "@types/react": "^18.0.25",

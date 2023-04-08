@@ -1,4 +1,4 @@
-// Copyright (c) 2021-2022, Brandon Lehmann <brandonlehmann@gmail.com>
+// Copyright (c) 2021-2023, Brandon Lehmann <brandonlehmann@gmail.com>
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -44,7 +44,7 @@ export const Null1Address = '0x0000000000000000000000000000000000000001';
 export interface WatchAsseOptions {
     type: 'ERC20'; // In the future, other standards will be supported
     options: {
-        address: string; // The address of the token contract
+        address: `0x${string}`; // The address of the token contract
         symbol: string; // A ticker symbol or shorthand, up to 5 characters
         decimals: number; // The number of token decimals
         image: string; // A string url of the token logo

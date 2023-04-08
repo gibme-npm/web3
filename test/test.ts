@@ -18,9 +18,7 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 
-// eslint-disable-next-line @typescript-eslint/ban-ts-comment
-// @ts-ignore
-import assert from 'assert';
+import * as assert from 'assert';
 import Web3, { ERC20, ERC721 } from '../src/web3';
 import { describe, it, before } from 'mocha';
 
@@ -41,14 +39,14 @@ describe('Unit Tests', () => {
             erc20 = new ERC20(await controller.loadContract(
                 '0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2'));
 
-            assert(typeof erc20 !== 'undefined');
+            assert.notEqual(typeof erc20, 'undefined');
         });
 
         it('ERC721', async () => {
             erc721 = new ERC721(await controller.loadContract(
                 '0xbc4ca0eda7647a8ab7c2061c2e118a18a936f13d'));
 
-            assert(typeof erc721 !== 'undefined');
+            assert.notEqual(typeof erc721, 'undefined');
         });
     });
 
@@ -60,7 +58,7 @@ describe('Unit Tests', () => {
 
             const value = await erc20.name();
 
-            assert(value.length !== 0);
+            assert.notEqual(value.length, 0);
         });
 
         it('symbol()', async function () {
@@ -70,7 +68,7 @@ describe('Unit Tests', () => {
 
             const value = await erc20.symbol();
 
-            assert(value.length !== 0);
+            assert.notEqual(value.length, 0);
         });
 
         it('totalSupply()', async function () {
@@ -80,13 +78,13 @@ describe('Unit Tests', () => {
 
             const value = await erc20.totalSupply();
 
-            assert(!value.isZero());
+            assert.equal(value.isZero(), false);
         });
 
         it('tokenMetadata()', async () => {
             const meta = await erc20.tokenMetadata();
 
-            assert(meta.address === erc20.address);
+            assert.equal(meta.address, erc20.address);
         });
     });
 
@@ -98,7 +96,7 @@ describe('Unit Tests', () => {
 
             const value = await erc721.name();
 
-            assert(value.length !== 0);
+            assert.notEqual(value.length, 0);
         });
 
         it('symbol()', async function () {
@@ -108,7 +106,7 @@ describe('Unit Tests', () => {
 
             const value = await erc721.symbol();
 
-            assert(value.length !== 0);
+            assert.notEqual(value.length, 0);
         });
 
         it('totalSupply()', async function () {
@@ -118,13 +116,13 @@ describe('Unit Tests', () => {
 
             const value = await erc721.totalSupply();
 
-            assert(!value.isZero());
+            assert.equal(value.isZero(), false);
         });
 
         it('tokenMetadata()', async () => {
             const meta = await erc721.tokenMetadata();
 
-            assert(meta.address === erc721.address);
+            assert.equal(meta.address, erc721.address);
         });
     });
 });

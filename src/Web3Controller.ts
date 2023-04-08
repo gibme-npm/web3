@@ -488,12 +488,11 @@ export default class Web3Controller extends EventEmitter {
      * @param options
      */
     public async fetchABI (
-        contract_address: string,
+        contract_address: `0x${string}`,
         options: Partial<ContractFetchAbiOptions> = {}
     ): Promise<string> {
         options.chainId ||= await this.chainId();
         options.force_refresh ??= false;
-        contract_address = contract_address.trim();
 
         if (!ethers.utils.isAddress(contract_address)) {
             throw new Error('Contract address is not a valid address');
@@ -547,14 +546,13 @@ export default class Web3Controller extends EventEmitter {
      * @param options
      */
     public async loadContract (
-        contract_address: string,
+        contract_address: `0x${string}`,
         contract_abi?: ethers.ContractInterface,
         options: Partial<ContractLoadOptions> = {}
     ): Promise<Contract> {
         options.chainId ||= await this.chainId();
         options.force_refresh ??= false;
         options.provider ||= this.signer || this.provider;
-        contract_address = contract_address.trim();
 
         if (!ethers.utils.isAddress(contract_address)) {
             throw new Error('Contract address is not a valid address');
@@ -586,7 +584,7 @@ export default class Web3Controller extends EventEmitter {
      * @param options
      */
     public async watchAsset (
-        contract_address: string,
+        contract_address: `0x${string}`,
         options: Partial<AssetOptions> = {}
     ): Promise<void> {
         if (!this.web3Provider) {
