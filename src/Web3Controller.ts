@@ -29,7 +29,7 @@ import {
     WatchAsseOptions,
     Web3ControllerOptions
 } from './Types';
-import fetch from 'cross-fetch';
+import fetch from '@gibme/fetch';
 import Web3Modal, { IProviderOptions } from 'web3modal';
 import MulticallProvider from './MulticallProvider';
 import Timer from '@gibme/timer';

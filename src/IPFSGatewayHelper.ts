@@ -18,7 +18,7 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 
-import fetch from 'cross-fetch';
+import fetch from '@gibme/fetch';
 import { sleep } from './Tools';
 
 /** @ignore */

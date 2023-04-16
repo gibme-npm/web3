@@ -32,6 +32,7 @@ import { multicallAbi, multicallAddresses } from './MulticallAddresses';
 import MulticallProvider, { MulticallProviderOptions } from './MulticallProvider';
 import { sleep } from './Tools';
 import Web3Controller from './Web3Controller';
+import IPFSGatewayHelper from './IPFSGatewayHelper';
 import {
     DefaultProviderOptions,
     Null1Address,
@@ -91,7 +92,8 @@ export {
     ContractFetchAbiOptions,
     Web3ControllerOptions,
     AssetOptions,
-    PaymentSplitter
+    PaymentSplitter,
+    IPFSGatewayHelper
 };
 
 export default Web3Controller;
