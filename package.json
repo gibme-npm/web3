@@ -1,9 +1,48 @@
 {
   "name": "@gibme/web3",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Web3 helper library",
   "main": "./dist/web3.js",
   "types": "./dist/web3.d.ts",
+  "exports": {
+    ".": "./dist/web3.js",
+    "abi": "./dist/ABI.js",
+    "basecontract": "./dist/BaseContract.js",
+    "contract": "./dist/Contract.js",
+    "erc20": "./dist/ERC20.js",
+    "erc721": "./dist/ERC721.js",
+    "erc777": "./dist/ERC777.js",
+    "erc1155": "./dist/ERC1155.js",
+    "ipfsgatewayhelper": "./dist/IPFSGatewayHelper.js"
+  },
+  "typesVersions": {
+    "*": {
+      "abi": [
+        "./dist/ABI.d.ts"
+      ],
+      "basecontract": [
+        "./dist/BaseContract.d.ts"
+      ],
+      "contract": [
+        "./dist/Contract.d.ts"
+      ],
+      "erc20": [
+        "./dist/ERC20.d.ts"
+      ],
+      "erc721": [
+        "./dist/ERC721.d.ts"
+      ],
+      "erc777": [
+        "./dist/ERC777.d.ts"
+      ],
+      "erc1155": [
+        "./dist/ERC1155.d.ts"
+      ],
+      "ipfsgatewayhelper": [
+        "./dist/IPFSGatewayHelper.d.ts"
+      ]
+    }
+  },
   "files": [
     "dist/*"
   ],
@@ -13,7 +52,8 @@
     "build:docs": "./node_modules/.bin/typedoc",
     "build:typescript": "./node_modules/.bin/tsc",
     "build:webpack": "./node_modules/.bin/auto-pack",
-    "test": "yarn test:style && yarn test:mocha",
+    "test": "yarn test:style && yarn test:typecheck && yarn test:mocha",
+    "test:typecheck": "./node_modules/.bin/tsc --noEmit",
     "test:style": "yarn style",
     "test:mocha": "./node_modules/.bin/mocha --exit --timeout 240000 --require ts-node/register test/test.ts",
     "style": "./node_modules/.bin/eslint src/**/*.ts test/**/*.ts",
@@ -39,43 +79,44 @@
   },
   "webpack": {
     "entry": {
-      "Web3": "./src/web3.ts"
+      "Web3": "./src/web3.ts",
+      "IPFSGatewayHelper": "./src/IPFSGatewayHelper.ts"
     }
   },
   "devDependencies": {
-    "@gibme/auto-pack": "^0.0.6",
-    "@types/mocha": "^10.0.0",
-    "@types/node": "^18.11.9",
-    "@typescript-eslint/eslint-plugin": "^5.42.0",
-    "@typescript-eslint/parser": "^5.42.0",
-    "dotenv": "^16.0.3",
-    "eslint": "^8.26.0",
-    "eslint-config-standard": "^17.0.0",
-    "eslint-plugin-import": "^2.26.0",
-    "eslint-plugin-n": "^15.4.0",
+    "@gibme/auto-pack": "^0.0.7",
+    "@types/mocha": "^10.0.1",
+    "@types/node": "^20.4.8",
+    "@typescript-eslint/eslint-plugin": "^6.2.1",
+    "@typescript-eslint/parser": "^6.2.1",
+    "dotenv": "^16.3.1",
+    "eslint": "^8.46.0",
+    "eslint-config-standard": "^17.1.0",
+    "eslint-plugin-import": "^2.28.0",
+    "eslint-plugin-n": "^16.0.1",
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-promise": "^6.1.1",
-    "mocha": "^10.1.0",
+    "mocha": "^10.2.0",
     "ts-node": "^10.9.1",
-    "typedoc": "^0.23.21",
-    "typescript": "^4.9.3"
+    "typedoc": "^0.24.8",
+    "typescript": "^5.1.6"
   },
   "dependencies": {
-    "@babel/core": "^7.20.5",
-    "@babel/preset-env": "^7.20.2",
-    "@coinbase/wallet-sdk": "^3.6.0",
-    "@gibme/fetch": "^1.0.1",
-    "@gibme/local-storage": "^1.0.4",
-    "@gibme/timer": "^1.0.3",
+    "@babel/core": "^7.22.9",
+    "@babel/preset-env": "^7.22.9",
+    "@coinbase/wallet-sdk": "^3.7.1",
+    "@gibme/fetch": "^1.0.3",
+    "@gibme/local-storage": "^1.0.5",
+    "@gibme/timer": "^1.0.4",
     "@types/bootstrap": "^5.2.6",
     "@types/jquery": "^3.5.16",
-    "@types/react": "^18.0.25",
+    "@types/react": "^18.2.18",
     "@walletconnect/web3-provider": "^1.8.0",
     "ethers": "^5.7.2",
-    "react": "18.1.0",
+    "react": "^18.2.0",
     "react-is": "^18.2.0",
-    "react-native": "^0.70.6",
-    "web3": "^1.8.1",
+    "react-native": "^0.72.3",
+    "web3": "^4.0.3",
     "web3modal": "1.9.9"
   }
 }
