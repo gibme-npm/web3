@@ -1,6 +1,6 @@
 {
   "name": "@gibme/web3",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Web3 helper library",
   "main": "./dist/web3.js",
   "types": "./dist/web3.d.ts",
